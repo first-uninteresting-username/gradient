@@ -151,5 +151,5 @@ implementation tuned or departed from them, and why:
 
 ## Credits and licence
 
-Code and assets: MIT (see `LICENSE`). Font: Space Mono, SIL Open Font License 1.1
-(`assets/fonts/OFL.txt`).
+Code and original assets: **GNU Affero General Public License v3.0** (see `LICENSE`).
+The font, Space Mono, keeps its own SIL Open Font License 1.1 (`assets/fonts/OFL.txt`).
