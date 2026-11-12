@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://track/chunk.gd" id="1_chunk"]
+[ext_resource type="Script" path="res://track/chunk_info.gd" id="2_info"]
+
+[sub_resource type="Resource" id="Resource_info"]
+script = ExtResource("2_info")
+id = &"adapter_wide_narrow"
+display_name = "Adapter wide → narrow"
+tags = PackedStringArray("adapter", "flat")
+difficulty = 2
+weight = 0.6
+min_speed = 0.0
+max_speed = 1000.0
+length = 24.0
+entry_profile = &"flat_wide"
+exit_profile = &"flat_narrow"
+adapter = true
+sections = [{
+"len": 6.0
+}, {
+"len": 12.0,
+"profile": "flat_narrow"
+}, {
+"len": 6.0
+}]
+hazard_slots = []
+gate_spacing = 25.0
+
+[node name="adapter_wide_narrow" type="Node3D"]
+script = ExtResource("1_chunk")
+info = SubResource("Resource_info")

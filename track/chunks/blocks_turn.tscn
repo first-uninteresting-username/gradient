@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://track/chunk.gd" id="1_chunk"]
+[ext_resource type="Script" path="res://track/chunk_info.gd" id="2_info"]
+
+[sub_resource type="Resource" id="Resource_info"]
+script = ExtResource("2_info")
+id = &"blocks_turn"
+display_name = "Blocks in a turn"
+tags = PackedStringArray("hazard", "turn")
+difficulty = 4
+weight = 0.9
+min_speed = 0.0
+max_speed = 80.0
+length = 80.0
+entry_profile = &"flat_wide"
+exit_profile = &"flat_wide"
+adapter = false
+sections = [{
+"len": 10.0
+}, {
+"len": 60.0,
+"yaw": 30.0
+}, {
+"len": 10.0
+}]
+hazard_slots = [{
+"type": "scatter",
+"from": 14.0,
+"to": 66.0
+}]
+gate_spacing = 0.0
+
+[node name="blocks_turn" type="Node3D"]
+script = ExtResource("1_chunk")
+info = SubResource("Resource_info")

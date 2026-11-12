@@ -1,0 +1,3 @@
+{ "version": 1, "name": "My line", "start_speed": 30,
+  "seed": 1234, "loop": false,
+  "chunks": ["straight_wide", "ramp_gap", "tube", "picket"] }

@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://track/chunk.gd" id="1_chunk"]
+[ext_resource type="Script" path="res://track/chunk_info.gd" id="2_info"]
+
+[sub_resource type="Resource" id="Resource_info"]
+script = ExtResource("2_info")
+id = &"adapter_wide_tube"
+display_name = "Adapter wide → tube"
+tags = PackedStringArray("adapter")
+difficulty = 3
+weight = 0.6
+min_speed = 0.0
+max_speed = 1000.0
+length = 28.0
+entry_profile = &"flat_wide"
+exit_profile = &"tube"
+adapter = true
+sections = [{
+"len": 6.0
+}, {
+"len": 16.0,
+"profile": "tube"
+}, {
+"len": 6.0
+}]
+hazard_slots = []
+gate_spacing = 25.0
+
+[node name="adapter_wide_tube" type="Node3D"]
+script = ExtResource("1_chunk")
+info = SubResource("Resource_info")

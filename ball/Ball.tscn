@@ -1,0 +1,24 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ball/ball.gd" id="1_ball"]
+[ext_resource type="Resource" path="res://ball/BallTuning.tres" id="2_tuning"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ball"]
+radius = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_ball"]
+radius = 0.5
+height = 1.0
+radial_segments = 32
+rings = 16
+
+[node name="Ball" type="RigidBody3D"]
+script = ExtResource("1_ball")
+tuning = ExtResource("2_tuning")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ball")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ball")
+cast_shadow = 0

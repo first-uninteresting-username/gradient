@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://track/hazards/score_gate.gd" id="1_script"]
+
+[node name="ScoreGate" type="Area3D"]
+script = ExtResource("1_script")

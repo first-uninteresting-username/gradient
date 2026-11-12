@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://track/chunk.gd" id="1_chunk"]
+[ext_resource type="Script" path="res://track/chunk_info.gd" id="2_info"]
+
+[sub_resource type="Resource" id="Resource_info"]
+script = ExtResource("2_info")
+id = &"scatter_blocks"
+display_name = "Scattered blocks"
+tags = PackedStringArray("hazard")
+difficulty = 1
+weight = 1.4
+min_speed = 0.0
+max_speed = 1000.0
+length = 80.0
+entry_profile = &"flat_wide"
+exit_profile = &"flat_wide"
+adapter = false
+sections = [{
+"len": 80.0
+}]
+hazard_slots = [{
+"type": "scatter",
+"from": 12.0,
+"to": 72.0
+}]
+gate_spacing = 0.0
+
+[node name="scatter_blocks" type="Node3D"]
+script = ExtResource("1_chunk")
+info = SubResource("Resource_info")

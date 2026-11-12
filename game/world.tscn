@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/world.gd" id="1_world"]
+[ext_resource type="Script" path="res://track/generator.gd" id="2_gen"]
+[ext_resource type="PackedScene" path="res://ball/Ball.tscn" id="3_ball"]
+[ext_resource type="PackedScene" path="res://camera/ChaseCam.tscn" id="4_cam"]
+
+[sub_resource type="Environment" id="Environment_world"]
+background_mode = 1
+background_color = Color(0.0196, 0.0275, 0.0588, 1)
+tonemap_mode = 3
+glow_enabled = true
+fog_enabled = true
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_world")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_world")
+
+[node name="Generator" type="Node3D" parent="."]
+script = ExtResource("2_gen")
+
+[node name="Ball" parent="." instance=ExtResource("3_ball")]
+
+[node name="ChaseCam" parent="." instance=ExtResource("4_cam")]
+current = true
+
+[node name="Effects" type="Node3D" parent="."]

@@ -1,0 +1,16 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - name: Flake check
+        run: nix flake check
+      - name: Tests (quick acceptance runs)
+        run: nix run .#test -- . --quick
+      - name: Export Linux, Windows and Web
+        run: nix run .#export

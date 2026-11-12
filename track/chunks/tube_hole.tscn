@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://track/chunk.gd" id="1_chunk"]
+[ext_resource type="Script" path="res://track/chunk_info.gd" id="2_info"]
+
+[sub_resource type="Resource" id="Resource_info"]
+script = ExtResource("2_info")
+id = &"tube_hole"
+display_name = "Tube with a hole"
+tags = PackedStringArray("walls", "hazard")
+difficulty = 4
+weight = 0.9
+min_speed = 0.0
+max_speed = 1000.0
+length = 60.0
+entry_profile = &"tube"
+exit_profile = &"tube"
+adapter = false
+sections = [{
+"len": 16.0
+}, {
+"len": 8.0,
+"hole": [-1.6, 1.6]
+}, {
+"len": 12.0
+}, {
+"len": 8.0,
+"hole": [-1.6, 1.6]
+}, {
+"len": 16.0
+}]
+hazard_slots = []
+gate_spacing = 25.0
+
+[node name="tube_hole" type="Node3D"]
+script = ExtResource("1_chunk")
+info = SubResource("Resource_info")
